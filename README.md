@@ -11,6 +11,8 @@ how to use openssl in your own swift framework
 5. in your framework header file, `#import <YOURPROJECT/FSOpenSSL.h>`
 6. in project settings, add `"$(SRCROOT)/YOURPROJECT/OpenSSL/include"` in `header search paths`, and set it `recursive`.
 7. in project settings, add `"$(SRCROOT)/YOURPROJECT/OpenSSL/lib"` in `library search paths`. (xcode should have done this automatically)..
-8. in your code, write like `FSOpenSSL.md5(from: "asdf")`
-9. build it, there should be no error.
-10.use the framework in your other project, just embedded it, no need to import openssl again
+8. in `build phases`, `copy bundle resources` add the two .a file to it.
+9. drag `FSOpenSSL.h` from `project` to `public`
+10. in your code, write like `FSOpenSSL.md5(from: "asdf")`
+11. build it, there should be no error.
+12.use the framework in your other project, just embedded it, no need to import openssl again
